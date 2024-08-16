@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Spring-Data-Jpa-Homework
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_data_jpa_homework
+    username: postgres
+    password: 2003
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+        hibernate:
+          format_sql: true  # Formats the SQL output for readability
+          dialect: org.hibernate.dialect.PostgreSQLDialect # Adjust based on your database
+
