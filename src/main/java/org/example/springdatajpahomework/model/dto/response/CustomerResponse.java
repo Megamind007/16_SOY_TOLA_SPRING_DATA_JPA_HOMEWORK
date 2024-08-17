@@ -1,4 +1,4 @@
-package org.example.springdatajpahomework.model.request;
+package org.example.springdatajpahomework.model.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -6,14 +6,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
+import java.util.Set;
+
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerRequest {
+public class CustomerResponse {
+    private Long customerId;
     private String customerName;
     private String address;
     private String phoneNumber;
-    private String email;
-
+    private EmailResponse emailResponse;
+    private Set<OrderResponse> orderResponses;
 }

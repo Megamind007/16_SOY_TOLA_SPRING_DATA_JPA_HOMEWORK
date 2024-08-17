@@ -2,10 +2,8 @@ package org.example.springdatajpahomework.model.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.example.springdatajpahomework.model.dto.response.EmailResponse;
 
 @Entity
 @Setter
@@ -13,12 +11,15 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "email")
+@ToString
 public class Email {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
     private String email;
-    @OneToOne(mappedBy = "email")
-    private Customer customer;
+
+    public EmailResponse toResponse() {
+        return new EmailResponse(this.id, this.email);
+    }
 }

@@ -1,4 +1,4 @@
-package org.example.springdatajpahomework.model.response;
+package org.example.springdatajpahomework.model.dto.response;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
